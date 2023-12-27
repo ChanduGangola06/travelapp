@@ -2,7 +2,6 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import reusable from "./reusable.style";
 import { COLORS, SIZES, TEXT } from "../../constants/theme";
-
 import {
   HeightSpacer,
   NetworkImage,
@@ -22,7 +21,8 @@ const ReusableTile = ({ item, onPress }) => {
           radius={12}
         />
 
-        <WidthSpacer height={15} />
+        <WidthSpacer width={15} />
+
         <View>
           <ReusableText
             text={item.title}
@@ -30,8 +30,8 @@ const ReusableTile = ({ item, onPress }) => {
             size={SIZES.medium}
             color={COLORS.black}
           />
-
           <HeightSpacer height={8} />
+
           <ReusableText
             text={item.location}
             family={"medium"}
@@ -40,8 +40,9 @@ const ReusableTile = ({ item, onPress }) => {
           />
 
           <HeightSpacer height={8} />
+
           <View style={reusable.rowWithSpace("flex-start")}>
-            <Rating rating={item.rating} />
+            <Rating rating={item.rating}/>
             <WidthSpacer width={5}/>
             <ReusableText
               text={` (${item.review}) `}

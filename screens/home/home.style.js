@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../constants/theme";
 
 const styles = StyleSheet.create({
-    box: {
+    box : {
         backgroundColor: COLORS.white,
         width: 40,
         height: 40,
@@ -10,6 +10,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     }
-});
+})
 
 export default styles

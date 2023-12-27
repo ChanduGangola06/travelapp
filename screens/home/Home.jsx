@@ -1,29 +1,30 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import reuasble from "../../components/Reusable/reusable.style";
-import {
-  ReusableText,
-  HeightSpacer,
-  Recommendations,
-  BestHotels,
-} from "../../components/index";
-import Places from "../../components/Home/Places";
+import reusable from "../../components/Reusable/reusable.style";
+import { ReusableText, HeightSpacer, Recommendations } from "../../components";
+import Places from '../../components/Home/Places'
 import { COLORS, SIZES, TEXT } from "../../constants/theme";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Feather } from "@expo/vector-icons";
 import styles from "./home.style";
-import { SafeAreaView } from "react-native-safe-area-context";
+import BestHotels from "../../components/Home/BestHotels";
+import checkUser from "../../hook/checkUser";
+
 
 const Home = ({ navigation }) => {
+  
+  const {userLogin,userData ,isLoading, time}  = checkUser()
   return (
-    <SafeAreaView style={reuasble.container}>
+    <View style={reusable.container}>
+       <HeightSpacer height={50}/>
       <View>
-        <View style={reuasble.rowWithSpace("space-between")}>
+        <View style={reusable.rowWithSpace("space-between")}>
           <ReusableText
-            text={"Hey User!"}
+            text={userLogin? `${time} ${userData.username}`: `${time} User!`}
             family={"regular"}
             size={TEXT.large}
             color={COLORS.black}
           />
+
           <TouchableOpacity
             style={styles.box}
             onPress={() => navigation.navigate("Search")}
@@ -40,14 +41,35 @@ const Home = ({ navigation }) => {
           size={TEXT.large}
           color={COLORS.black}
         />
-
+        
         <Places />
-        <HeightSpacer height={15} />
-        <Recommendations />
-        <HeightSpacer height={30} />
-        <BestHotels />
+
+        <HeightSpacer height={35}/>
+
+        <View
+        style={[reusable.rowWithSpace("space-between")]}
+      >
+        <ReusableText
+          text={"Recommendations"}
+          family={"medium"}
+          size={TEXT.large}
+          color={COLORS.black}
+        />
+
+        <TouchableOpacity onPress={() => navigation.navigate("Recommended")}>
+          <Feather name="list" size={20} />
+        </TouchableOpacity>
       </View>
-    </SafeAreaView>
+
+        <Recommendations />
+
+        <HeightSpacer height={30}/>
+
+        <BestHotels />
+
+        
+      </View>
+    </View>
   );
 };
 

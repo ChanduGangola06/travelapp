@@ -1,29 +1,29 @@
 import ReusableText from "./Reusable/ReusableText";
+import ReusableBtn from "./Buttons/ReusableBtn";
 import HeightSpacer from "./Reusable/HeightSpacer";
 import WidthSpacer from "./Reusable/WidthSpacer";
-import ReusableBtn from "./Buttons/ReusableBtn";
-import Places from "./Home/Places";
 import NetworkImage from "./Reusable/NetworkImage";
-import BestHotels from "./Home/BestHotels";
 import Recommendations from "./Home/Recommendations";
 import Rating from "./Reusable/Rating";
-import ReusableTile from "./Reusable/ReusableTile";
 import AppBar from './Reusable/Appbar';
 import DescriptionText from "./Reusable/DescriptionText";
 import PopularList from "./Country/PopularList";
+import HotelMap from "./Hotel/HotelMap";
+import ReviewTle from "./Tiles/Reviews/ReviewTle";
+import ReviewsList from "./Hotel/ReviewsList";
 
 export {
     ReusableText,
-    HeightSpacer,
-    WidthSpacer,
     ReusableBtn,
-    Places,
+    HeightSpacer,
+    WidthSpacer, 
     NetworkImage,
     Recommendations,
-    BestHotels,
-    ReusableTile,
     Rating,
     AppBar,
     DescriptionText,
-    PopularList
+    PopularList, 
+    HotelMap,
+    ReviewTle,
+    ReviewsList
 }
